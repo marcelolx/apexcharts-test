@@ -1,0 +1,29 @@
+<% series = [
+  { name: "Type A", data: @type_a },
+  { name: "Type B", data: @type_b },
+  { name: "Type C", data: @type_c },
+] %>
+
+<% options = {
+  title: {
+    text: "Some title",
+    align: "center"
+  },
+  defaultLocale: "pt-br",
+  stacked: true,
+  annotations: {
+    yaxis: [
+      y: 0,
+      borderColor: "#000000"
+    ]
+  },
+  yaxis: {
+    title: {
+      text: "Values"
+    }
+  }
+} %>
+
+<%= column_chart(series, { **options, theme: "palette7" }) %>
+
+<%= link_to "Profile", profile_index_path %>
